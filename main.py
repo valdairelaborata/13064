@@ -4,26 +4,30 @@ class Carro:
         self.placa = placa
         self.status = status
         self.tipo = tipo
+        self.temperatura = 30
         print("Opa, passei pelo construtor do carro.")
 
 
     def ligar(self):
         print(f"Ligando... o carro {self.placa}" )
 
+    def acelerar(self):
+        self.temperatura += 50
+
     def desligar(self):
         print(f"Desligando... o carro {self.placa}")
 
-    def obterTemperadutraDoMotor(self):
-        print("Opa, 83 graus")
+    def obterTemperaturaDoMotor(self):
+        print(f"Opa, {self.temperatura} graus")
         
 
 
 
-objetoCarro = Carro("Branca", "111111", "disponível", "hatch")
+objetoCarro = Carro("Branca", "111111", "disonível", "hatch")
 objetoCarro.ligar()
+objetoCarro.acelerar()
+objetoCarro.obterTemperaturaDoMotor()
 
 
-objetoCarro2 = Carro("Branca", "22222", "disponível", "hatch")
-objetoCarro2.ligar()
 
 print("Fim")
