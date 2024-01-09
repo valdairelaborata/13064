@@ -12,6 +12,9 @@ class Carro:
 
     def desligar(self):
         print(f"Desligando... o carro {self.placa}")
+
+    def obterTemperadutraDoMotor(self):
+        print("Opa, 83 graus")
         
 
 
