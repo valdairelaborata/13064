@@ -1,4 +1,4 @@
-class Carro:
+class Carro(object):
     def __init__(self, cor, placa, status, tipo):
         self.cor = cor
         self.placa = placa
@@ -23,7 +23,7 @@ class Carro:
 
 
 
-objetoCarro = Carro("Branca", "111111", "disonível", "hatch")
+objetoCarro = Carro("Branca", "111111", "disponível", "hatch")
 objetoCarro.ligar()
 objetoCarro.acelerar()
 objetoCarro.obterTemperaturaDoMotor()
