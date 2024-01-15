@@ -33,4 +33,7 @@ conta.deposito(10)
 conta.sacar(20)
 conta.deposito(10)
 print(conta.saldo)
+
 conta.trocar_titular("Pedro", "xpto 0010")
+conta.sacar(20)
+conta.deposito(10)
