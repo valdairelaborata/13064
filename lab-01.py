@@ -36,8 +36,8 @@ usuarioAna = Usuario("Ana", "456")
 
 listar(usuarioPedro)
 
-listar(usuarioAna)
-buscar(usuarioPedro)
-buscar(usuarioAna)
-salvar(usuarioPedro)
-salvar(usuarioAna)
+# listar(usuarioAna)
+# buscar(usuarioPedro)
+# buscar(usuarioAna)
+# salvar(usuarioPedro)
+# salvar(usuarioAna)
