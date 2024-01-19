@@ -1,1 +1,0 @@
-1- Crie um gerador chamado gerador_pares que gere uma sequência infinita de números pares. Comece com o número 2 e gere os próximos números pares a partir dele. Em seguida, utilize um loop for para imprimir os primeiros 10 números pares gerados pelo seu gerador.
