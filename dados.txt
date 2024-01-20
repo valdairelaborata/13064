@@ -1,4 +1,0 @@
-strFileName é uma varíavel do tipo String para armazenarmos o nome completo do arquivo do qual extrairemos os dados.
-intFileNumber é uma variável do tipo Integer que armazenará um número inteiro que servirá de referência para o arquivo. Se houver necessidade de referenciar vários arquivos, cada um deverá receber a sua numeração.
-strTextLine é uma variável do tipo String, para a qual serão transferidas as informações da linha de texto do arquivo conectado
-Instruções
