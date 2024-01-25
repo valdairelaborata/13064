@@ -1,7 +1,34 @@
-# 1 - Criar uma classe ContaBancaria em um módulo separado e usá-la em um script principal. Certifique-se de criar a estrutura de diretórios apropriada para o projeto.
 
-from contabancaria.conta import ContaBancaria
-conta = ContaBancaria(32132154, 10)
+from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy.orm import declarative_base, sessionmaker
 
-conta.depositar(50)
-print(conta.comprovante())
+
+DATABASE_URL = "sqlite:///pedidos.db"
+
+Base = declarative_base()
+
+class Cliente(Base):
+    __tablename__ = "Clientes"
+
+    id = Column(Integer, primary_key=True, index=True)
+    nome = Column(String)
+
+
+engine = create_engine(DATABASE_URL)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+db = SessionLocal()
+
+def criar_cliente(nome):
+    cliente = Cliente(nome=nome)
+    db.add(cliente)
+    db.commit()
+
+
+
+
+criar_cliente("Ana")
+
+print("Fim")
+
