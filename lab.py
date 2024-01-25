@@ -1,0 +1,1 @@
+# 1 - Criar uma classe ContaBancaria em um módulo separado e usá-la em um script principal. Certifique-se de criar a estrutura de diretórios apropriada para o projeto.
