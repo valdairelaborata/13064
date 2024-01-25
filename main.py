@@ -1,21 +1,7 @@
-from comum.auxilar import FILESYSTEM, obterConexaoComBancoDeDados
-from comum.operacoes import raiz_quadrada
-from comum.data import hora_agora
-from cadastro.colaborador import Colaborador
-from cadastro.diretor import Diretor
+# 1 - Criar uma classe ContaBancaria em um módulo separado e usá-la em um script principal. Certifique-se de criar a estrutura de diretórios apropriada para o projeto.
 
-colaborador = Colaborador("Ana", 30)
-print(colaborador.apresentar())
+from contabancaria.conta import ContaBancaria
+conta = ContaBancaria(32132154, 10)
 
-diretor = Diretor("Pedro", 55)
-print(diretor.apresentar())
-diretor.salvar()
-
-# print(obterConexaoComBancoDeDados())
-
-# print(FILESYSTEM)
-
-
-# print(raiz_quadrada)
-
-print(hora_agora)
+conta.depositar(50)
+print(conta.comprovante())
