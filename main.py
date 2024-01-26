@@ -5,6 +5,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 DATABASE_URL = "sqlite:///pedidos.db"
 
+
 Base = declarative_base()
 
 class Cliente(Base):
