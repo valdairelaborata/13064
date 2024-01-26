@@ -8,3 +8,4 @@ class Cliente(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String, unique=True)
+    email = Column(String)
