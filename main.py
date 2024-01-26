@@ -16,6 +16,8 @@ class Cliente(Base):
 
 engine = create_engine(DATABASE_URL)
 
+Base.metadata.create_all(bind=engine)
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 db = SessionLocal()
@@ -25,10 +27,34 @@ def criar_cliente(nome):
     db.add(cliente)
     db.commit()
 
+def ler_clientes():
+    return db.query(Cliente).all()
 
 
+def atualizar_cliente(id, nome):
+    cliente = db.query(Cliente).filter(Cliente.id == id).first()
+    cliente.nome = nome
+    db.commit()
 
-criar_cliente("Ana")
+def excluir_cliente(id):
+    cliente = db.query(Cliente).filter(Cliente.id == id).first()
+    db.delete(cliente)
+    db.commit()
 
-print("Fim")
+#C
+#criar_cliente("Lucas")
+
+#R
+# clientes = ler_clientes()
+
+# for cliente in clientes:
+#     print(f"Id: {cliente.id} - nome: {cliente.nome}")
+
+#U
+#atualizar_cliente(1, "Ana alterado")
+    
+#D
+#excluir_cliente(1)    
+    
+
 
