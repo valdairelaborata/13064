@@ -1,6 +1,6 @@
 
 
-from model.cliente import Cliente
+from model.model import Cliente
 from infra.infra import db
 
 
@@ -22,3 +22,15 @@ def excluir_cliente(id):
     cliente = db.query(Cliente).filter(Cliente.id == id).first()
     db.delete(cliente)
     db.commit()
+
+
+def  listar_pedidos(id):
+    cliente = db.query(Cliente).filter(Cliente.id == id).first()
+    print(f"Pedidos do cliente - {cliente.nome}")
+    for pedido in cliente.pedidos:
+        print(f"Pedido: {pedido.id} - descrição: {pedido.descricao} - valor: {pedido.valor}")
+
+
+
+
+

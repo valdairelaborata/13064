@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Float, ForeignKey, Integer, String
 from sqlalchemy.orm import declarative_base, relationship
 
-model_cliente = declarative_base()
+Base = declarative_base()
 
-class Cliente(model_cliente):
+class Cliente(Base):
     __tablename__ = "clientes"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -12,7 +12,7 @@ class Cliente(model_cliente):
 
     pedidos = relationship("Pedido", back_populates="cliente")
 
-class Pedido(model_cliente):
+class Pedido(Base):
     __tablename__ = "pedidos"
 
     id = Column(Integer, primary_key=True, index=True)

@@ -1,0 +1,6 @@
+Labs
+
+2 - Adicione uma Conta Bancária associada ao cliente criado no lab 1. Com esse modelo de dados crie o banco e as operações CRUD
+A conta bancária deve ter o número, saldo e o relacionamento com o cliente.
+
+* As operações devem contemplar os conceitos de transações.
