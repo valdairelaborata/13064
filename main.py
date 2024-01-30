@@ -1,12 +1,9 @@
 
+from services.cliente import listar_contas
+from services.contabancaria import adicionar
 
+adicionar("Claúdia", "claudia@gmail.com")
 
-from model.model import Cliente
-from infra.infra import db
+listar_contas(3)
 
-
-
-
-cliente = Cliente(nome="Ana", email="ana@gmail.com")
-db.add(cliente)
-db.commit()
+adicionar(987, 8000, 3)
