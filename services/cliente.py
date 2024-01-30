@@ -8,6 +8,11 @@ def adicionar(nome, email):
     db.add(cliente)
     db.commit()
 
+def alterar(cliente_id, nome):
+    cliente = db.query(Cliente).filter(Cliente.id == cliente_id).first()
+    cliente.nome = nome
+    db.commit()
+
 def listar_contas(cliente_id):
     cliente = db.query(Cliente).filter(Cliente.id == cliente_id).first()
     print(f"Cliente: {cliente.nome}")

@@ -6,6 +6,7 @@ from infra.infra import db
 def adicionar(numero, saldo, cliente_id):
     conta = ContaBancaria(numero=numero, saldo=saldo, cliente_id = cliente_id)
     db.add(conta)
+    
     db.commit()
 
 
