@@ -4,3 +4,4 @@ Labs
 A conta bancária deve ter o número, saldo e o relacionamento com o cliente.
 
 * As operações devem contemplar os conceitos de transações.
+        
