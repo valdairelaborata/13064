@@ -1,0 +1,1 @@
+1 - Modele uma API para um CRUD de clientes. A API deve consumir métodos para manipular registros em banco utilizando o SQLAlchemy e SQLite.
