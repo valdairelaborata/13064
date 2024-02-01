@@ -1,9 +1,16 @@
 
 # criar o ambiente virtual
-python -m venv  lab_09_02
+python -m venv  lab_10
 
 #ativar o ambiente virtual
 cd .\lab_09_02\Scripts\activate
 
 #instalar ORM
 pip install SQLAlchemy
+
+#instalar fastapi
+pip install fastapi 
+pip install uvicorn
+
+#iniciar o servidor web
+uvicorn main:app --reload

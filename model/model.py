@@ -22,3 +22,10 @@ class ContaBancaria(Base):
     saldo = Column(Float)
     cliente_id = Column(Integer, ForeignKey("clientes.id"))
     cliente = relationship("Cliente", back_populates="contas")
+
+
+class Produto(Base):
+    __tablename__ = "produtos"
+    id = Column(Integer, primary_key=True, index=True)
+    codigo = Column(String)
+    descricao = Column(String)
