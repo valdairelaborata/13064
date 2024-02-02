@@ -44,6 +44,8 @@ def validaToken(jwt: str):
 @app.post("/token")
 async def obterToken(usuario, senha):
 
+    #Validar usuário + senha no banco
+
     token_data = {"sub": usuario, "scopes": ["me"]}
     token = gerarToken(token_data)
 
