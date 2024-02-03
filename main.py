@@ -32,12 +32,12 @@ def gerarToken(data: dict)  -> str:
     return encoded_jwt
 
 
-def validaToken(jwt: str):
+def validaToken(token: str):
     try:
-        payload = jwt.decode(jwt, SECRET_KEY, algorithm=ALGORITHM)   
-        return payload     
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return payload
     except Exception:
-        raise  HTTPException(status_code=401, detail="Acesso negado!")
+        raise HTTPException(status_code=401, detail="Acesso negado!")
 
 
 
@@ -57,13 +57,14 @@ async def obterToken(usuario, senha):
 
 #C - criar
 @app.post("/produtos")
-def criar(produtoView: ProdutoView):
+def criar(produtoView: ProdutoView, usuario: dict = Depends(validaToken)):
     criarProduto(produtoView.codigo, produtoView.descricao)
     return {"mensagem": f"Produto {produtoView.codigo} - {produtoView.descricao} criado!"}
 
 
 #R - Ler
 @app.get("/produtos/{id}")
+#async def get_protected_data(current_user: dict = Depends(decode_jwt_token)):
 def buscar(id: int, usuario: dict = Depends(validaToken)):
     return buscarProduto(id)
 
